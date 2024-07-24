@@ -285,6 +285,7 @@ class AadB2cAutoConfigurationTests extends AbstractAadB2cOAuth2ClientTestConfigu
     @EnableWebSecurity
     public static class AadB2cTestWebSecurityConfiguration {
 
+        @SuppressWarnings({"deprecation", "removal"})
         @Bean
         public SecurityFilterChain apiFilterChain(HttpSecurity http, AadB2cOidcLoginConfigurer configurer) throws Exception {
             // @formatter:off

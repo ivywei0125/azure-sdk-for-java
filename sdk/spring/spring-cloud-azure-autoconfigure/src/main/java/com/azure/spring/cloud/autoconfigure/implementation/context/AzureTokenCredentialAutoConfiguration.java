@@ -123,7 +123,8 @@ public class AzureTokenCredentialAutoConfiguration extends AzureServiceConfigura
                         .clientId(clientId);
 
                     if (StringUtils.hasText(properties.getClientCertificatePassword())) {
-                        builder.pfxCertificate(clientCertificatePath, properties.getClientCertificatePassword());
+                        builder.pfxCertificate(clientCertificatePath)
+                               .clientCertificatePassword(properties.getClientCertificatePassword());
                     } else {
                         builder.pemCertificate(clientCertificatePath);
                     }
@@ -209,6 +210,7 @@ public class AzureTokenCredentialAutoConfiguration extends AzureServiceConfigura
         return new AzureServiceClientBuilderFactoryPostProcessor();
     }
 
+    @SuppressWarnings("removal")
     @Bean(name = DEFAULT_CREDENTIAL_TASK_EXECUTOR_BEAN_NAME)
     @ConditionalOnMissingBean(name = DEFAULT_CREDENTIAL_TASK_EXECUTOR_BEAN_NAME)
     ThreadPoolTaskExecutor credentialTaskExecutor() {

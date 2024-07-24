@@ -422,6 +422,21 @@
           "justification" : "The type of the parameter changed from 'java.lang.String' to 'com.azure.core.util.BinaryData'."
         },
         {
+          "code" : "java.field.removed",
+          "old" : "field com.mysql.cj.conf.PropertyKey.ociConfigProfile",
+          "justification" : "Fix field removed."
+        },
+        {
+          "code" : "java.method.addedToInterface",
+          "new" : "method int com.mysql.cj.protocol.ServerSession::getOldStatusFlags()",
+          "justification" : "Method was added to an interface."
+        },
+        {
+          "code" : "java.method.addedToInterface",
+          "new" : "method void com.mysql.cj.protocol.ServerSession::setOldStatusFlags(int)",
+          "justification" : "Method was added to an interface."
+        },
+        {
           "code": "java.annotation.added",
           "old": "method com.azure.cosmos.CosmosDiagnosticsContext com.azure.cosmos.CosmosDiagnostics::getDiagnosticsContext()",
           "new": "method com.azure.cosmos.CosmosDiagnosticsContext com.azure.cosmos.CosmosDiagnostics::getDiagnosticsContext()",
@@ -577,6 +592,59 @@
           "old" : ".*? com\\.azure\\.ai\\.translation\\.text\\.models.*",
           "new" : ".*? com\\.azure\\.ai\\.translation\\.text\\.models.*",
           "justification": "Migration to azure-json"
+        },
+        {
+          "regex": true,
+          "code" : "java\\.annotation\\.removed",
+          "old" : ".*? com\\.azure\\.communication\\.callautomation\\.models.*",
+          "new" : ".*? com\\.azure\\.communication\\.callautomation\\.models.*",
+          "justification": "Migration to azure-json"
+        },
+        {
+          "regex": true,
+          "code" : "java\\.annotation\\.removed",
+          "old" : ".*? com\\.azure\\.communication\\.chat\\.models.*",
+          "new" : ".*? com\\.azure\\.communication\\.chat\\.models.*",
+          "justification": "Migration to azure-json"
+        },
+        {
+          "code": "java.class.nowFinal",
+          "old" : "class com.azure.resourcemanager.eventhubs.models.Identity",
+          "new" : "class com.azure.resourcemanager.eventhubs.models.Identity",
+          "justification": "Class is now final."
+        },
+        {
+          "code": "java.class.nowFinal",
+          "old" : "class com.azure.resourcemanager.eventhubs.models.UserAssignedIdentity",
+          "new" : "class com.azure.resourcemanager.eventhubs.models.UserAssignedIdentity",
+          "justification": "Class is now final."
+        },
+        {
+          "code" : "java.method.returnTypeTypeParametersChanged",
+          "old" : "method java.util.List<com.azure.resourcemanager.compute.fluent.models.VirtualMachineExtensionInner> com.azure.resourcemanager.compute.models.SecurityPostureReference::excludeExtensions()",
+          "new" : "method java.util.List<java.lang.String> com.azure.resourcemanager.compute.models.SecurityPostureReference::excludeExtensions()",
+          "justification": "Service breaks but no customer onboard."
+        },
+        {
+          "code" : "java.method.parameterTypeParameterChanged",
+          "old" : "parameter com.azure.resourcemanager.compute.models.SecurityPostureReference com.azure.resourcemanager.compute.models.SecurityPostureReference::withExcludeExtensions(===java.util.List<com.azure.resourcemanager.compute.fluent.models.VirtualMachineExtensionInner>===)",
+          "new" : "parameter com.azure.resourcemanager.compute.models.SecurityPostureReference com.azure.resourcemanager.compute.models.SecurityPostureReference::withExcludeExtensions(===java.util.List<java.lang.String>===)",
+          "justification": "Service breaks but no customer onboard."
+        },
+        {
+          "code" : "java.class.removed",
+          "old" : "class com.azure.resourcemanager.containerservice.models.OSOptionProperty",
+          "justification": "Removed non-functional API `getOsOptions` and related models `OSOptionProperty`"
+        },
+        {
+          "code": "java.method.removed",
+          "old" : "method com.azure.resourcemanager.network.models.FirewallPacketCaptureParameters com.azure.resourcemanager.network.models.FirewallPacketCaptureParameters::withId(java.lang.String)",
+          "justification": "service bug fix."
+        },
+        {
+          "code": "java.missing.oldSuperType",
+          "old": "class com.azure.resourcemanager.network.models.FirewallPacketCaptureParameters",
+          "justification": "service bug fix."
         }
       ]
     }

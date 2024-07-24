@@ -30,6 +30,7 @@ public class AadResourceServerHttpSecurityConfigurer extends AbstractHttpConfigu
 
     private Converter<Jwt, Collection<GrantedAuthority>> jwtGrantedAuthoritiesConverter;
 
+    @SuppressWarnings({"deprecation", "removal"})
     @Override
     public void init(HttpSecurity builder) throws Exception {
         super.init(builder);

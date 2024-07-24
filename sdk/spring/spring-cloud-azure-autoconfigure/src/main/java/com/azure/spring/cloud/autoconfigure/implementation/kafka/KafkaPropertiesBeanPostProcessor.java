@@ -17,6 +17,7 @@ class KafkaPropertiesBeanPostProcessor extends AbstractKafkaPropertiesBeanPostPr
         super(azureGlobalProperties);
     }
 
+    @SuppressWarnings("removal")
     @Override
     protected Map<String, Object> getMergedProducerProperties(KafkaProperties properties) {
         return properties.buildProducerProperties();
@@ -27,6 +28,7 @@ class KafkaPropertiesBeanPostProcessor extends AbstractKafkaPropertiesBeanPostPr
         return properties.getProducer().getProperties();
     }
 
+    @SuppressWarnings("removal")
     @Override
     protected Map<String, Object> getMergedConsumerProperties(KafkaProperties properties) {
         return properties.buildConsumerProperties();
@@ -37,6 +39,7 @@ class KafkaPropertiesBeanPostProcessor extends AbstractKafkaPropertiesBeanPostPr
         return properties.getConsumer().getProperties();
     }
 
+    @SuppressWarnings("removal")
     @Override
     protected Map<String, Object> getMergedAdminProperties(KafkaProperties properties) {
         return properties.buildAdminProperties();

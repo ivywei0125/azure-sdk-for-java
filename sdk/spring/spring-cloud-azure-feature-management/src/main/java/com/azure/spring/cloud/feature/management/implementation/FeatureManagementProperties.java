@@ -63,6 +63,7 @@ public class FeatureManagementProperties extends HashMap<String, Object> {
         }
     }
 
+    @SuppressWarnings({"unchecked", "deprecation"})
     private void tryServerSideSchema(Map<? extends String, ? extends Object> features) {
         if (features.keySet().isEmpty()) {
             return;
@@ -91,7 +92,7 @@ public class FeatureManagementProperties extends HashMap<String, Object> {
             if (List.class.isAssignableFrom(featureFlagsObject.getClass())) {
                 final List<Object> featureFlagsSection = (List<Object>) featureFlagsObject;
                 for (Object flag : featureFlagsSection) {
-                    addServerSideFeature((Map<? extends String, ? extends Object>) flag, null);
+                    addServerSideFeature((Map<? extends String, ?>) flag, null);
                 }
             }
         }
@@ -135,6 +136,7 @@ public class FeatureManagementProperties extends HashMap<String, Object> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void addServerSideFeature(Map<? extends String, ? extends Object> features, String key) {
         Object featureValue = null;
         if (key != null) {
@@ -145,16 +147,19 @@ public class FeatureManagementProperties extends HashMap<String, Object> {
 
         ServerSideFeature serverSideFeature = null;
         try {
-            LinkedHashMap<String, Object> ff = new LinkedHashMap<>();
-            if (featureValue.getClass().isAssignableFrom(LinkedHashMap.class)) {
+            LinkedHashMap<String, Object> ff = new LinkedHashMap<String, Object>();
+            if (featureValue.getClass().isAssignableFrom(LinkedHashMap.class.getClass())) {
                 ff = (LinkedHashMap<String, Object>) featureValue;
             }
-            LinkedHashMap<String, Object> conditions = new LinkedHashMap<>();
+            LinkedHashMap<String, Object> conditions = new LinkedHashMap<String, Object>();
             if (ff.containsKey("conditions")
-                && ff.get("conditions").getClass().isAssignableFrom(LinkedHashMap.class)) {
+                && ff.get("conditions").getClass().isAssignableFrom(LinkedHashMap.class.getClass())) {
                 conditions = (LinkedHashMap<String, Object>) ff.get("conditions");
             }
-            FeatureFilterUtils.updateValueFromMapToList(conditions, "client_filters");
+
+            if (conditions.get("client_filters") instanceof List) {
+                conditions.put("client_filters", null);
+            }
 
             serverSideFeature = MAPPER.convertValue(featureValue, ServerSideFeature.class);
         } catch (IllegalArgumentException e) {
@@ -168,7 +173,7 @@ public class FeatureManagementProperties extends HashMap<String, Object> {
                 final Feature feature = new Feature();
                 feature.setKey(serverSideFeature.getId());
                 feature.setEvaluate(serverSideFeature.isEnabled());
-                feature.setEnabledFor(serverSideFeature.getConditions().getClientFiltersAsMap());
+                feature.setEnabledFor(serverSideFeature.getConditions().getClientFilters());
                 feature.setRequirementType(serverSideFeature.getConditions().getRequirementType());
                 featureManagement.put(serverSideFeature.getId(), feature);
             } else {

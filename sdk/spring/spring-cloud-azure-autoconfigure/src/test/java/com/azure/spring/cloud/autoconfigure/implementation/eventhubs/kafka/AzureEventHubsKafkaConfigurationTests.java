@@ -38,6 +38,7 @@ class AzureEventHubsKafkaConfigurationTests {
                     KafkaAutoConfiguration.class, AzureKafkaSpringCloudStreamConfiguration.class, KafkaBinderConfiguration.class));
 
 
+    @SuppressWarnings("removal")
     @Test
     void shouldConfigureSaslPlainWhenGivenConnectionString() {
         contextRunner

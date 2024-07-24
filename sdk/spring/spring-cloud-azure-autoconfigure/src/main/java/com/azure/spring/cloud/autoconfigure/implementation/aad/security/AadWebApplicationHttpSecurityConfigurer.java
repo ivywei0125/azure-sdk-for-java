@@ -63,6 +63,7 @@ public class AadWebApplicationHttpSecurityConfigurer extends AbstractHttpConfigu
      */
     private Filter conditionalAccessFilter;
 
+    @SuppressWarnings({"deprecation", "removal"})
     @Override
     public void init(HttpSecurity builder)throws Exception {
         super.init(builder);

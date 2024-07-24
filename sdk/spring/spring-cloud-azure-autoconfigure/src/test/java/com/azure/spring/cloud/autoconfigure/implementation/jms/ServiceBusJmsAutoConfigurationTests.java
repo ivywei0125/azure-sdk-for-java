@@ -224,6 +224,7 @@ class ServiceBusJmsAutoConfigurationTests {
             });
     }
 
+    @SuppressWarnings("removal")
     @ParameterizedTest
     @ValueSource(strings = { "standard", "premium" })
     void jmsPropertiesConfiguredCorrectly(String pricingTier) {

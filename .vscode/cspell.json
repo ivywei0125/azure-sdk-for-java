@@ -77,7 +77,6 @@
     "sdk/appconfiguration/azure-spring-cloud-feature-management-web/**",
     "sdk/appconfiguration/azure-spring-cloud-feature-management/**",
     "sdk/appconfiguration/azure-spring-cloud-appconfiguration-config-web/**",
-    "sdk/appconfiguration/azure-data-appconfiguration/**",
     "sdk/appconfiguration/azure-spring-cloud-appconfiguration-config/**",
     "sdk/boms/azure-sdk-bom/**",
     "sdk/boms/azure-sdk-template-bom/**",
@@ -141,7 +140,6 @@
     "sdk/core/azure-core-test/**",
     "sdk/cosmos/azure-cosmos-encryption/**",
     "sdk/cosmos/azure-cosmos-spark_3_2-12/**",
-    "sdk/cosmos/dev.md",
     "sdk/spring/azure-spring-data-cosmos/**",
     "sdk/cosmos/azure-cosmos-kafka-connect/**",
     "sdk/deviceupdate/azure-iot-deviceupdate/**",
@@ -162,8 +160,8 @@
     "sdk/keyvault/azure-security-keyvault-keys/**",
     "sdk/keyvault/azure-security-keyvault-secrets/**",
     "sdk/keyvault/azure-security-test-keyvault-jca/**",
-    "sdk/keyvault/test-resources.json",
-    "sdk/keyvault/TROUBLESHOOTING.md",
+    "sdk/keyvault/test-resources/test-resources.json",
+    "sdk/keyvault/test-resources-jca/test-resources.json",
     "sdk/formrecognizer/azure-ai-formrecognizer/**",
     "sdk/core/azure-core/**",
     "sdk/documentintelligence/azure-ai-documentintelligence/**",
@@ -277,6 +275,12 @@
     "databind",
     "databricks",
     "DAZURE",
+    "deidentification",
+    "deidentificationclient",
+    "deidentified",
+    "deid",
+    "deidservices",
+    "deidentify",
     "ddos",
     "dcis",
     "deallocate",
@@ -303,6 +307,7 @@
     "Entra",
     "Esto",
     "etag",
+    "euap",
     "eventhub",
     "eventhubs",
     "failondeprecatedstatus",
@@ -318,16 +323,17 @@
     "hanaonazure",
     "hdfs",
     "hdinsight",
+    "healthdataaiservices",
     "hudha",
     "hvac",
     "hybridkubernetes",
     "hyunwoongko",
+    "idnum",
     "insights",
     "intellij",
     "Intellij",
     "iotcentral",
     "ipconfiguration",
-    "lrgrwrks",
     "Iscsi",
     "jacksonavro",
     "jacoco",
@@ -1222,13 +1228,30 @@
         "yiliu",
         "usgovcloudapi",
         "Pnative",
-        "Djava"
+        "Djava",
+        "sbmvn"
       ]
     },
     {
       "filename": "sdk/spring/spring-cloud-azure-starter-monitor/**.md",
       "words": [
         "Djava"
+      ]
+    },
+    {
+      "filename": "sdk/spring/spring-cloud-azure-testcontainers/src/main/java/com/azure/spring/testcontainers/service/connection/storage/StorageBlobContainerConnectionDetailsFactory.java",
+      "words": [
+        "CDXJ",
+        "SZFPT",
+        "Bekso"
+      ]
+    },
+    {
+      "filename": "sdk/spring/spring-cloud-azure-testcontainers/src/main/java/com/azure/spring/testcontainers/service/connection/storage/StorageQueueContainerConnectionDetailsFactory.java",
+      "words": [
+        "CDXJ",
+        "SZFPT",
+        "Bekso"
       ]
     },
     {
